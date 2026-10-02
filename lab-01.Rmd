@@ -283,3 +283,41 @@ _Calculate the percentage change in visitor admissions from 2021 to 2022. Of the
 
 
 ```
+library(tidyverse)
+visitors <- read_csv
+visitors %>% head(n = 10)
+View(visitors)
+visitors %>% count()
+visitors %>% count(admission)
+visitors %>% count(region)
+visitors %>% count(admission,region)
+class(visitors$n_2022)
+visitors %>% summarise_all(class)
+visitors %>% arrange(desc(n_2022))
+visitors %>% arrange(desc(n_2022))%>% head(n = 10)
+visitors %>% arrange(desc(n_2021))%>% head(n = 10)
+visitors %>% filter(attraction == "National Museum of Scotland")
+visitors %>% filter(n_2022>=565772)
+visitors %>% filter(n_2022>=1000000)
+visitors %>% filter(n_2022==565772)%>%select(attraction)
+visitors %>% filter(n_2022>1000000)%>%count()
+visitors %>%
+  filter(
+    setting == "O",
+    region == "Yorkshire and the Humber",
+    admission == "Members",
+    n_2022 >= 100000
+    ) %>%
+  count()
+visitors %>%
+  filter(
+    n_2022>50000,
+    n_2022<100000
+)%>%
+count()
+   
+visitors%>%
+   count(region)%>%
+      filter( n>50)%>%
+         count()
+   
